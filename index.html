@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages has no SPA fallback. public/404.html redirects deep links
+      // to /?/path, and this puts the real path back before the app loads.
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            "",
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          );
+        }
+      })(window.location);
+    </script>
+    <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/680a6a827ea03a8ecb52d35e_PF_signature_bright.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Petra Fölk — UX/UI designer based in Berlin. Full-stack designer developing value-driven products." />
+    <title>Petra Folk | UX/UI designer</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("pf-theme");
+          if (t !== "light" && t !== "dark") t = "light";
+          document.documentElement.setAttribute("data-theme", t);
+          document.documentElement.style.colorScheme = t;
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://cdn.prod.website-files.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.prod.website-files.com" />
+    <!-- Only fonts actually used on the homepage -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Gothic+A1:wght@400;500;700;800;900&family=Lato:wght@700&family=Poppins:wght@200;300;400;500;700;900&family=Open+Sans:wght@300;400&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/webflow.css" />
+    <style>.companies-section{z-index:2;text-align:center;box-sizing:border-box;width:100%;max-width:none;padding:2.5rem 0 3.5rem;position:relative}.companies-logos{box-sizing:border-box;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.75rem calc(2.25rem + 24px);width:100%;max-width:none;margin:0;padding:0 clamp(1rem,3vw,2rem);display:flex}@keyframes companies-logo-in{0%{opacity:0;transform:translate(-36px)}to{opacity:1;transform:translate(0,0)}}.companies-logo{object-fit:contain;opacity:0;flex:none;width:auto;max-width:140px;height:44px;animation:.7s cubic-bezier(.22,1,.36,1) forwards companies-logo-in;display:block}.companies-logo:first-child{animation-delay:0s}.companies-logo:nth-child(2){animation-delay:.14s}.companies-logo:nth-child(3){animation-delay:.28s}.companies-logo:nth-child(4){animation-delay:.42s}.companies-logo:nth-child(5){animation-delay:.56s}.companies-logo:nth-child(6){animation-delay:.7s}.companies-logo:nth-child(7){animation-delay:.84s}.companies-logo[alt=verimi]{height:35.2px}.companies-logo[alt=gitti]{height:33.792px}.companies-logo[alt="World Food Programme"]{height:63.36px}@media (prefers-reduced-motion:reduce){.companies-logo{opacity:1;animation:none;transform:none}}.hero-line-1{display:inline-block;position:relative}.location-pill{--lp-w0:3.2em;--lp-w1:3.5em;--lp-w2:4.8em;--lp-text:1.05em;--lp-stride:2.6em;color:#04141a;letter-spacing:.04em;white-space:nowrap;transform-origin:50%;pointer-events:none;background:0 0;border-radius:0;justify-content:center;align-items:center;margin:0;padding:0;font-family:Poppins,sans-serif;font-size:.42em;font-weight:600;line-height:1;display:inline-flex;position:absolute;top:50%;left:calc(100% + .28em);overflow:visible;transform:translateY(-55%)rotate(-10deg)}.location-pill__viewport{box-sizing:content-box;height:var(--lp-text);width:var(--lp-w0);isolation:isolate;will-change:width;background:#2ee6d6;border-radius:999px;padding:.32em .7em;animation:5.4s linear infinite location-width;display:block;overflow:hidden}.location-pill__track{will-change:transform;flex-direction:column;align-items:center;width:100%;animation:5.4s cubic-bezier(.22,1,.36,1) infinite location-slot;display:flex}.location-pill__item{height:var(--lp-stride);flex:0 0 var(--lp-stride);white-space:nowrap;width:max-content;max-width:none;line-height:var(--lp-text);justify-content:center;align-items:flex-start;display:flex;overflow:hidden}@keyframes location-slot{0%,26%{transform:translateY(0)}32%,58%{transform:translateY(-25%)}64%,90%{transform:translateY(-50%)}to{transform:translateY(-75%)}}@keyframes location-width{0%,27%{width:var(--lp-w0)}28%{width:var(--lp-w0);animation-timing-function:cubic-bezier(.34,1.56,.64,1)}31%,59%{width:var(--lp-w1)}60%{width:var(--lp-w1);animation-timing-function:cubic-bezier(.34,1.56,.64,1)}63%,91%{width:var(--lp-w2)}92%{width:var(--lp-w2);animation-timing-function:cubic-bezier(.34,1.56,.64,1)}97%,to{width:var(--lp-w0)}}@media (prefers-reduced-motion:reduce){.location-pill__track,.location-pill__viewport{animation:none}.location-pill__viewport{width:var(--lp-w0)}.location-pill__item:not(:first-child){display:none}}</style>
+    <script type="module" crossorigin src="/assets/index-JtdHyEaP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DQzd6EhK.css">
+  </head>
+  <body class="body-2">
+    <div id="root"></div>
+  </body>
+</html>
