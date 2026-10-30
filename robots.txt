@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /nebenan---
+
+Sitemap: https://robowombat.github.io/sitemap.xml

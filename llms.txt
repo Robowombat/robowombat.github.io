@@ -1,0 +1,21 @@
+# Petra Fölk
+
+> Product designer (UX/UI) based in Berlin, designing products and visuals since 2008. Lead designer of ShareTheMeal by the UN World Food Programme, product designer at nebenan.de, and designer for N26, Verimi, Amorelie and Gitti.
+
+Contact: [LinkedIn](https://www.linkedin.com/in/petra-f%C3%B6lk-b6833411)
+
+## Case studies
+
+- [Amorelie webshop & landing pages](https://robowombat.github.io/amorelie): Product design for Amorelie: webshop optimization, user research, and the redesign of the annual Advent Calendar landing pages.
+- [Gitti product detail pages](https://robowombat.github.io/gitti): Redesign of the product detail pages and cart drawer for Gitti, a conscious beauty brand from Berlin, to lift webshop conversion.
+- [N26 transparent Mastercard](https://robowombat.github.io/n26): Brand and UI design for N26: the first transparent N26 Mastercard, its card carriers and branded goods, explored in a design sprint.
+- [ShareTheMeal donation app](https://robowombat.github.io/sharethemeal-donation): Lead product design for ShareTheMeal, the UN World Food Programme's donation app (2016–2019): donation flows, onboarding, campaign discovery and community features.
+- [ShareTheMeal brand & animations](https://robowombat.github.io/stm-camera): Brand and UI work for ShareTheMeal by the UN World Food Programme: app UI assets, iconography, illustrations, animations and a design system.
+- [Verimi 2FA & digital identity](https://robowombat.github.io/verimi): Designing trust at Verimi: simpler two-factor authentication and secure login for a digital ID wallet used across third-party services.
+
+## More
+
+- [nebenan.de](https://robowombat.github.io/nebenan): Petra Fölk's product design for nebenan.de, Germany's leading neighborhood platform: donations, registration and onboarding, and marketplace monetization.
+- [Play: side projects](https://robowombat.github.io/play): Side projects by Petra Fölk: Psycle, an iOS cycle-tracking app she researched and built with AI, the Maple Roots stress simulator for a Berlin street tree, and hand-made craft.
+
+The three nebenan.de case studies (donation, registration, marketplace) are password-protected and available on request.
