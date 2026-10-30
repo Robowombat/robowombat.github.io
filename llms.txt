@@ -4,6 +4,10 @@
 
 Contact: [LinkedIn](https://www.linkedin.com/in/petra-f%C3%B6lk-b6833411)
 
+## Resume (machine-readable)
+
+- [resume.json](https://robowombat.github.io/resume.json): skills, experience timeline, and links to public case studies.
+
 ## Case studies
 
 - [Amorelie webshop & landing pages](https://robowombat.github.io/amorelie): Product design for Amorelie: webshop optimization, user research, and the redesign of the annual Advent Calendar landing pages.

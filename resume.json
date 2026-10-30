@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "updated": "2026-10-30",
+  "person": {
+    "name": "Petra Fölk",
+    "jobTitle": "Product designer (UX/UI)",
+    "location": "Berlin, DE",
+    "workingSince": 2008,
+    "summary": "Product designer (UX/UI) based in Berlin, designing products and visuals since 2008. Lead designer of ShareTheMeal by the UN World Food Programme, product designer at nebenan.de, and designer for N26, Verimi, Amorelie and Gitti.",
+    "image": "https://robowombat.github.io/assets/images/collaborate-petra.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/petra-f%C3%B6lk-b6833411"
+    ]
+  },
+  "contact": {
+    "portfolio": "https://robowombat.github.io/",
+    "linkedIn": "https://www.linkedin.com/in/petra-f%C3%B6lk-b6833411"
+  },
+  "skills": [
+    "Product design (UX/UI)",
+    "User research and usability testing",
+    "Design systems and UI patterns",
+    "Brand and visual design",
+    "Prototyping and design sprints",
+    "Conversion-focused webshop and funnel design",
+    "Mobile app design",
+    "Motion and micro-interactions"
+  ],
+  "experience": [
+    {
+      "organization": "nebenan.de",
+      "role": "Product designer",
+      "period": "2023–2026",
+      "highlights": "Donation revenue, registration and onboarding, marketplace monetization for Germany’s leading neighborhood platform.",
+      "caseStudyUrl": "https://robowombat.github.io/nebenan"
+    },
+    {
+      "organization": "Gitti",
+      "role": "Product designer",
+      "period": "2025",
+      "highlights": "Product detail pages and cart drawer redesign to lift webshop conversion.",
+      "caseStudyUrl": "https://robowombat.github.io/gitti"
+    },
+    {
+      "organization": "Amorelie",
+      "role": "Product designer",
+      "period": "2022–2023",
+      "highlights": "Webshop optimization, user research, Advent Calendar landing pages (B2C & B2B).",
+      "caseStudyUrl": "https://robowombat.github.io/amorelie"
+    },
+    {
+      "organization": "Verimi",
+      "role": "UX/UI designer",
+      "period": "2019–2021",
+      "highlights": "Secure login, two-factor authentication, digital ID wallet integrations.",
+      "caseStudyUrl": "https://robowombat.github.io/verimi"
+    },
+    {
+      "organization": "ShareTheMeal (UN World Food Programme)",
+      "role": "Lead product designer",
+      "period": "2016–2019",
+      "highlights": "Scaled the donation app globally: flows, onboarding, campaigns, community features, brand and UI.",
+      "caseStudyUrl": "https://robowombat.github.io/sharethemeal-donation"
+    },
+    {
+      "organization": "N26",
+      "role": "Brand & UI designer",
+      "period": "2013–2015",
+      "highlights": "First transparent N26 Mastercard, card carriers, branded goods, design sprint with cross-functional team.",
+      "caseStudyUrl": "https://robowombat.github.io/n26"
+    }
+  ],
+  "publicCaseStudies": [
+    {
+      "title": "Amorelie webshop & landing pages",
+      "url": "https://robowombat.github.io/amorelie",
+      "description": "Product design for Amorelie: webshop optimization, user research, and the redesign of the annual Advent Calendar landing pages."
+    },
+    {
+      "title": "Gitti product detail pages",
+      "url": "https://robowombat.github.io/gitti",
+      "description": "Redesign of the product detail pages and cart drawer for Gitti, a conscious beauty brand from Berlin, to lift webshop conversion."
+    },
+    {
+      "title": "N26 transparent Mastercard",
+      "url": "https://robowombat.github.io/n26",
+      "description": "Brand and UI design for N26: the first transparent N26 Mastercard, its card carriers and branded goods, explored in a design sprint."
+    },
+    {
+      "title": "ShareTheMeal donation app",
+      "url": "https://robowombat.github.io/sharethemeal-donation",
+      "description": "Lead product design for ShareTheMeal, the UN World Food Programme's donation app (2016–2019): donation flows, onboarding, campaign discovery and community features."
+    },
+    {
+      "title": "ShareTheMeal brand & animations",
+      "url": "https://robowombat.github.io/stm-camera",
+      "description": "Brand and UI work for ShareTheMeal by the UN World Food Programme: app UI assets, iconography, illustrations, animations and a design system."
+    },
+    {
+      "title": "Verimi 2FA & digital identity",
+      "url": "https://robowombat.github.io/verimi",
+      "description": "Designing trust at Verimi: simpler two-factor authentication and secure login for a digital ID wallet used across third-party services."
+    }
+  ],
+  "notes": [
+    "Three nebenan.de deep-dive case studies (donation, registration, marketplace) are password-protected; contact via LinkedIn.",
+    "Side projects and experiments: https://robowombat.github.io/play"
+  ]
+}
