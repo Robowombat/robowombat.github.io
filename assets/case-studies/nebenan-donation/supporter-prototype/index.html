@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fördermitglied Prototyp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: "Byrd"; font-weight: 900; src: url("assets/Byrd-Black.woff2") format("woff2"); }
+
+  /* Design tokens from the Product Design System (Figma variables) */
+  :root {
+    --surface: #ffffff;
+    --surface-dim: #e9e8ed;
+    --surface-container: #f4f3f6;
+    --on-surface: #201649;
+    --on-surface-variant: #635c80;
+    --outline: #a6a2b6;
+    --outline-hover: #635c80;
+    --outline-variant2: #201649;
+    --primary: #cae85d;
+    --on-primary: #201649;
+    --secondary1-container: #e8e3ff;
+    --on-secondary1-container: #4d17e5;
+    --error-container: #fde6f7;
+    --error-outline: #cc339f;
+    --on-surface-error: #cc339f;
+    --shadow-small: rgba(32, 22, 73, 0.04);
+    --shadow-medium: rgba(32, 22, 73, 0.1);
+    --xs: 4px; --sm: 8px; --md: 12px; --lg: 16px; --xl: 24px; --xxl: 32px; --full: 999px;
+    --inter: "Inter", system-ui, sans-serif;
+    --sf: -apple-system, "SF Pro Text", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    background: #d9d8de;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--inter);
+    font-feature-settings: "salt" 1;
+    color: var(--on-surface);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* When framed inside the portfolio case study */
+  html.is-embed, html.is-embed body {
+    background: transparent;
+    overflow: hidden;
+  }
+  html.is-embed .phone {
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Fullscreen lightbox: scale the 375×812 design to fit — no empty scroll */
+  html.is-fs, html.is-fs body {
+    background: #e9e8ed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  html.is-fs body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  html.is-fs .phone {
+    flex: none;
+    width: 375px;
+    height: 812px;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    transform-origin: top center;
+  }
+  html.is-fs .scroll {
+    overscroll-behavior: contain;
+  }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+
+  /* Device frame: 375 × 812, like the Figma screens */
+  .phone {
+    position: relative; width: 375px; height: 812px; overflow: hidden;
+    background: var(--surface-dim);
+    box-shadow: 0 20px 60px rgba(32, 22, 73, 0.25);
+    border-radius: 24px;
+  }
+  @media (max-width: 420px) { body { background: var(--surface-dim); } .phone { border-radius: 0; box-shadow: none; } }
+
+  /* Header Bar Mobile */
+  .header-bar {
+    position: absolute; top: 0; left: 0; width: 100%; z-index: 3;
+    background: var(--surface);
+    box-shadow: 0 6px 32px 0 var(--shadow-medium);
+  }
+  .status-bar { height: 44px; padding: 2px 15px 0 21px; display: flex; align-items: center; justify-content: space-between; }
+  .status-time { width: 54px; text-align: center; font-family: var(--sf); font-weight: 600; font-size: 14px; letter-spacing: -0.28px; }
+  .status-icons { display: block; }
+  .header { position: relative; height: 56px; padding: var(--sm) var(--lg); display: flex; align-items: center; }
+  .header img { display: block; }
+  .header-title {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    font-weight: 700; font-size: 18px; line-height: 24px; white-space: nowrap;
+  }
+
+  /* Scrollable card between header and sticky button */
+  .scroll { position: absolute; inset: 100px 0 0 0; overflow-y: auto; padding-bottom: 112px; scrollbar-width: none; }
+  .scroll::-webkit-scrollbar { display: none; }
+  .header-photo { position: relative; height: 110px; overflow: hidden; background: url("assets/header-bg.jpg") center / cover; }
+  .header-photo img { position: absolute; left: -14px; top: -55px; width: 403px; height: 269px; object-fit: cover; }
+  .content {
+    background: #fff;
+    display: flex; flex-direction: column; align-items: center; gap: var(--xl);
+    padding: var(--lg) var(--md) var(--xxl);
+    box-shadow: 0 2px 8px 0 var(--shadow-small), 0 0 0 0 var(--surface-dim);
+  }
+  .headline { width: 100%; display: flex; flex-direction: column; gap: var(--sm); text-align: center; }
+  .headline h1 { font-family: "Byrd", var(--inter); font-weight: 900; font-size: 24px; line-height: 1; text-transform: uppercase; }
+  .headline p { font-size: 14px; line-height: 20px; }
+
+  /* Switcher Toggle */
+  .switcher { width: 100%; height: 44px; padding: var(--xs); border-radius: var(--xxl); background: var(--surface-container); display: flex; }
+  .switcher button {
+    flex: 1; padding: var(--sm) 0; border-radius: var(--xxl);
+    border: 1.5px solid transparent;
+    font-weight: 600; font-size: 16px; line-height: 20px; color: var(--on-surface-variant);
+  }
+  .switcher button[aria-pressed="true"] { background: var(--surface); border-color: var(--outline-variant2); color: var(--on-surface); }
+
+  /* Amount picker */
+  .amount-picker { width: 100%; display: flex; flex-direction: column; align-items: center; gap: var(--sm); }
+  .prices { position: relative; width: 100%; display: flex; gap: 8px; }
+  .tile {
+    flex: 1; min-width: 0; height: 48px; padding: var(--sm) var(--lg); border-radius: var(--md);
+    background: var(--surface-container); border: 1.5px solid transparent;
+    font-weight: 600; font-size: 16px; line-height: 20px; white-space: nowrap;
+  }
+  .prices.yearly .tile { padding: var(--sm) var(--md); }
+  .tile[aria-pressed="true"] { border-color: var(--outline-variant2); }
+  .label {
+    position: absolute; pointer-events: none;
+    padding: var(--xs) var(--sm); border-radius: var(--lg);
+    background: var(--secondary1-container); color: var(--on-secondary1-container);
+    font-weight: 700; font-size: 12px; line-height: 16px;
+  }
+  .price-description { width: 100%; padding: var(--xl) 0 var(--sm); text-align: center; font-weight: 500; font-size: 12px; line-height: 16px; }
+
+  /* Price Field */
+  .price-field { width: 100%; display: flex; flex-direction: column; align-items: center; gap: var(--xs); }
+  .field {
+    width: 104px; height: 56px; padding: var(--lg); border-radius: var(--lg);
+    display: flex; align-items: center; gap: var(--xs);
+    background: var(--surface); border: 1px solid var(--outline);
+    font-weight: 600; font-size: 20px; line-height: 24px;
+  }
+  .field .value { flex: 1; min-width: 0; text-align: center; }
+  .field .value.placeholder { color: var(--on-surface-variant); }
+  .price-field.focus .field { border-color: var(--outline-hover); }
+  .price-field.error .field { background: var(--error-container); border-color: var(--error-outline); }
+  .price-field.error .currency { color: var(--on-surface-error); }
+  .field-error { display: none; width: 100%; padding: 0 var(--sm); text-align: center; color: var(--on-surface-error); font-weight: 700; font-size: 12px; line-height: 16px; }
+  .price-field.error .field-error { display: block; }
+
+  /* Footer */
+  .footer { width: 100%; display: flex; flex-direction: column; align-items: center; gap: var(--xl); }
+  .one-time { font-weight: 500; font-size: 14px; line-height: 20px; text-decoration: underline; text-underline-position: from-font; }
+  .payment-methods { display: flex; gap: var(--xs); justify-content: center; }
+  .pm { height: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .pm img { display: block; }
+  .pm-paypal { width: 70px; }
+  .pm-paypal img { width: 43px; height: 30px; }
+  .pm-card { width: 64px; padding-top: 4px; }
+  .pm-card span { font-size: 10px; line-height: 16px; }
+  .pm-sepa { width: 70px; padding-top: 3px; }
+  .sepa { position: relative; width: 43px; height: 20px; }
+  .sepa img:first-child { position: absolute; left: 0; top: 0; width: 43px; height: 12.76px; }
+  .sepa img:last-child { position: absolute; left: 0.3px; bottom: 0; width: 42.41px; height: 6.43px; }
+  .terms { width: 351px; text-align: center; color: var(--on-surface-variant); font-weight: 500; font-size: 12px; line-height: 16px; }
+  .terms u { color: var(--on-surface); font-weight: 600; text-underline-position: from-font; }
+
+  /* Button Sticky */
+  .sticky {
+    position: absolute; left: 0; bottom: 0; width: 100%; z-index: 2;
+    background: var(--surface); padding: var(--lg);
+    display: flex; flex-direction: column; align-items: center; gap: var(--lg);
+    box-shadow: 0 4px 20px 0 var(--shadow-medium);
+  }
+  .btn-primary {
+    width: 100%; height: 48px; padding: 0 var(--xl); border-radius: var(--full);
+    background: var(--primary); color: var(--on-primary);
+    font-weight: 600; font-size: 16px; line-height: 20px;
+  }
+  .security { display: flex; gap: var(--xs); align-items: center; color: var(--on-surface-variant); font-weight: 500; font-size: 12px; line-height: 16px; }
+
+  /* Keypads (iOS numeric keyboard) */
+  .keypad {
+    position: absolute; left: 0; bottom: 0; width: 100%; z-index: 4;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.15); /* box-shadow, not filter: a filter would disable the keyboard's backdrop blur */
+    transform: translateY(calc(100% + 8px)); visibility: hidden;
+    transition: transform 0.25s ease-out, visibility 0s 0.25s;
+  }
+  .keypad.open { transform: translateY(0); visibility: visible; transition: transform 0.25s ease-out; }
+  .kb-toolbar {
+    width: 100%; height: 40px; padding: 10px 16px; background: #f8f8f6; text-align: right;
+    font-family: "Open Sans", var(--inter); font-weight: 600; font-size: 14px; line-height: 20px; color: var(--on-surface);
+  }
+  .kb-keys { position: relative; height: 216px; background: rgba(206, 210, 217, 0.7); backdrop-filter: blur(35px); }
+  .key {
+    position: absolute; width: 117px; height: 46px; border-radius: 5px; background: #fff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.3);
+    font-family: var(--sf); color: #000;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  }
+  .key:active { background: #bcc0c7; }
+  .key .num { font-size: 25px; line-height: 30px; letter-spacing: -0.5px; }
+  .key .letters { margin-top: -1px; font-weight: 700; font-size: 10px; line-height: 12px; letter-spacing: 1.7px; }
+  .key.zero { justify-content: center; }
+  .key-delete { position: absolute; left: calc(83.33% + 0.5px - 16px); top: 173px; width: 32px; height: 32px; }
+  .key-delete img, .key-symbols img { display: block; }
+  .key-symbols { position: absolute; left: calc(16.67% - 2px - 24.5px); top: 180px; width: 49px; height: 14px; }
+
+  /* DRAFT: native-style iOS payment sheet.
+     Shell (overlay, 6px inset, 38px radius, grabber, 54px toolbar, 44px glass buttons, SF Pro 17 title)
+     follows Apple's iOS 27 kit "Sheet – iPhone" (Detent=Medium). The content rows are not from a design yet. */
+  .pay-overlay {
+    position: absolute; inset: 0; z-index: 5; background: rgba(0, 0, 0, 0.2);
+    opacity: 0; visibility: hidden; transition: opacity 0.25s, visibility 0s 0.25s;
+  }
+  .pay-overlay.open { opacity: 1; visibility: visible; transition: opacity 0.25s; }
+  .pay-sheet {
+    position: absolute; left: 6px; right: 6px; bottom: 6px; z-index: 6;
+    padding: 16px 0 20px; border-radius: 38px;
+    background: rgba(246, 246, 248, 0.94); /* kit: 70% white fill + white glass layer */
+    backdrop-filter: blur(16px) saturate(1.6); -webkit-backdrop-filter: blur(16px) saturate(1.6);
+    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.18), inset 0 0 10px rgba(255, 255, 255, 0.6);
+    font-family: var(--sf); color: #1a1a1a;
+    transform: translateY(calc(100% + 12px)); visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), visibility 0s 0.35s;
+  }
+  .pay-sheet.open { transform: translateY(0); visibility: visible; transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1); }
+  .pay-grabber { position: absolute; top: 6px; left: 50%; width: 60px; height: 4px; margin-left: -30px; border-radius: 100px; background: #ccc; }
+  .pay-toolbar { position: relative; height: 54px; padding: 0 16px; display: flex; align-items: flex-start; justify-content: space-between; }
+  .pay-title { position: absolute; left: 50%; top: 11px; transform: translateX(-50%); font-weight: 600; font-size: 17px; line-height: 22px; }
+  .glass-btn {
+    width: 44px; height: 44px; border-radius: 296px; display: grid; place-items: center;
+    background: rgba(255, 255, 255, 0.85); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08), inset 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+  }
+  .pay-list { margin: 0 16px; border-radius: 26px; background: #fff; overflow: hidden; }
+  .pay-row { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 16px; position: relative; }
+  .pay-row + .pay-row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 0.5px; background: rgba(60, 60, 67, 0.29); }
+  .pay-row .k { width: 92px; flex: none; font-size: 15px; line-height: 20px; color: rgba(60, 60, 67, 0.6); }
+  .pay-row .v { flex: 1; min-width: 0; font-size: 15px; line-height: 20px; }
+  .pay-row .v small { display: block; font-size: 13px; line-height: 18px; color: rgba(60, 60, 67, 0.6); }
+  .pay-total { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 16px 32px 0; }
+  .pay-total .k { min-width: 0; font-size: 15px; line-height: 20px; color: rgba(60, 60, 67, 0.6); }
+  .pay-total .v { flex: none; white-space: nowrap; font-weight: 600; font-size: 28px; line-height: 34px; letter-spacing: 0.3px; }
+  .pay-confirm {
+    display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; margin-top: 20px;
+    font-size: 15px; line-height: 20px; color: #1a1a1a;
+  }
+  .side-btn-icon { width: 34px; height: 34px; border-radius: 50%; border: 2px solid #0a84ff; display: grid; place-items: center; color: #0a84ff; font-weight: 600; font-size: 13px; }
+  .pay-sheet.paying .side-btn-icon { border-color: rgba(10, 132, 255, 0.25); border-top-color: #0a84ff; animation: spin 0.8s linear infinite; }
+  .pay-sheet.paying .side-btn-icon span { visibility: hidden; }
+  .pay-sheet.done .side-btn-icon { background: #0a84ff; color: #fff; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Success (Figma "Success" → Info Sheet) */
+  .success {
+    position: absolute; inset: 0; z-index: 7;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+    padding: 36px var(--xl) 12px;
+    background: var(--surface);
+    box-shadow: 0 6px 32px 0 rgba(32, 22, 73, 0.2);
+    opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0s 0.3s;
+  }
+  .success.open { opacity: 1; visibility: visible; transition: opacity 0.3s; }
+  .success img { display: block; }
+  .success p { text-align: center; font-weight: 600; font-size: 24px; line-height: 32px; color: var(--on-primary); }
+
+  /* One-time support page — mobile version of Figma "Manuelle Förderer" (desktop web page) */
+  @font-face { font-family: "Byrd"; font-weight: 700; src: url("assets/Byrd-Bold.woff2") format("woff2"); }
+  :root {
+    --lavender: #7c5bff; --lavender-dark: #4d17e5; --knallgreen: #cae85d; --vanilla: #fffcf1;
+    --purple-80: #4c4566; --purple-60: #797392; --purple-20: #d2d0db; --purple-5: #f4f3f6;
+    --open-sans: "Open Sans", var(--inter);
+    --card-shadow: 0 12px 16px rgba(32, 22, 73, 0.15);
+  }
+  .screen-once {
+    position: absolute; inset: 0; z-index: 3; background: #fff;
+    transform: translateX(100%); visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), visibility 0s 0.35s;
+  }
+  .screen-once.open { transform: translateX(0); visibility: visible; transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1); }
+  .screen-once .scroll { padding-bottom: 0; }
+  .once-hero { position: relative; display: flex; flex-direction: column; gap: 24px; padding: 24px 16px 48px; }
+  .once-hero::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: var(--green-height, 300px); background: var(--knallgreen); }
+  .once-hero > * { position: relative; }
+  .once-intro { display: flex; flex-direction: column; gap: 12px; text-align: center; }
+  .once-intro h1 { font-family: "Byrd", var(--inter); font-weight: 900; font-size: 32px; line-height: 1; text-transform: uppercase; }
+  .once-intro h1 span { display: block; color: var(--lavender); }
+  .once-intro p { font-size: 16px; line-height: 1.45; color: var(--purple-80); }
+  .once-card { background: #fff; border-radius: 16px; padding: 24px 16px; box-shadow: var(--card-shadow); }
+  .once-amount { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .once-amount-top { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; padding-bottom: 12px; }
+  .once-amount-top > p { font-size: 16px; line-height: 1.45; color: var(--purple-80); text-align: center; }
+  .once-prices { width: 100%; display: flex; gap: 8px; padding: 8px 0; }
+  .once-prices .tile { padding: var(--sm) var(--md); }
+  .once-cta { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .btn-lavender {
+    width: 100%; height: 52px; padding: 14px 24px; border-radius: 32px; background: var(--lavender); color: #fff;
+    font-family: var(--open-sans); font-weight: 700; font-size: 16px; line-height: 20px;
+  }
+  .once-cta .security img { width: 18px; height: 18px; }
+  .or-divider { display: flex; align-items: center; gap: 8px; padding: 12px 0; }
+  .or-divider img { flex: 1; min-width: 16px; height: 2px; }
+  .or-divider span { font-family: var(--open-sans); font-weight: 700; font-size: 14px; line-height: 20px; text-transform: uppercase; text-align: center; }
+  .paypal-row { display: flex; align-items: center; gap: 24px; }
+  .paypal-row img { display: block; flex: none; }
+  .btn-outline {
+    flex: 1; min-width: 0; height: 56px; padding: 16px 24px; border-radius: 100px; border: 1px solid var(--on-surface);
+    font-weight: 600; font-size: 16px; line-height: 1.45; white-space: nowrap;
+  }
+  .iban-card { position: relative; display: flex; flex-direction: column; gap: 16px; }
+  .iban-row { display: flex; flex-direction: column; gap: 2px; }
+  .iban-row .k { display: flex; align-items: center; justify-content: space-between; min-height: 32px; }
+  .iban-row .nowrap { white-space: nowrap; }
+  .iban-row .k { font-family: var(--open-sans); font-weight: 700; font-size: 14px; line-height: 24px; letter-spacing: 0.4px; text-transform: uppercase; color: var(--lavender-dark); }
+  .iban-row .v { display: flex; align-items: center; gap: 12px; font-family: var(--open-sans); font-size: 16px; line-height: 24px; letter-spacing: 0.2px; color: var(--purple-80); }
+  .iban-row .v > span { flex: 1; min-width: 0; }
+  .iban-row em { display: block; }
+  .btn-copy {
+    flex: none; display: flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--purple-60); background: #fff;
+    font-family: var(--open-sans); font-weight: 700; font-size: 12px; line-height: 20px; letter-spacing: 0.2px; text-transform: uppercase; color: var(--on-surface-variant);
+  }
+  .btn-copy img { display: block; }
+  .heart-badge {
+    position: absolute; right: -10px; bottom: 28px; width: 76.44px; height: 76.44px; border-radius: 50%;
+    background: var(--lavender); display: grid; place-items: center; transform: rotate(-11.12deg);
+  }
+  .heart-badge img { display: block; width: 43.365px; height: 40.67px; }
+  .once-regular { background: var(--vanilla); padding: 48px 16px; display: flex; flex-direction: column; gap: 40px; }
+  .once-regular-text { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  .once-regular h2 { font-family: "Byrd", var(--inter); font-weight: 700; font-size: 28px; line-height: 1.15; }
+  .once-regular p { font-size: 16px; line-height: 1.45; color: var(--purple-80); }
+  .btn-lavender-l {
+    height: 56px; padding: 16px 32px; border-radius: 100px; background: var(--lavender); color: #fff;
+    font-weight: 600; font-size: 16px; line-height: 1.45; white-space: nowrap;
+  }
+  /* Figma photo collage is 416 × 416; scaled to the 343px mobile column (16px kept free for the lavender offset shadow) */
+  .collage-wrap { width: 343px; height: 327px; }
+  .collage { position: relative; width: 416px; height: 416px; margin-left: 16px; transform: scale(0.786); transform-origin: top left; }
+  .collage .photo { position: absolute; overflow: hidden; }
+  .collage .photo img { position: absolute; max-width: none; }
+  .collage .p1 { left: 216px; top: calc(50% - 83px - 72px); width: 144px; height: 144px; }
+  .collage .p1 img { height: 109.9%; left: -22.17%; top: 0; width: 164.89%; }
+  .collage .p2 { left: 216px; top: calc(50% + 80px - 75px); width: 200px; height: 150px; }
+  .collage .p2 img { height: 132.8%; left: -48.02%; top: -1.37%; width: 149.38%; }
+  .collage .p3 { left: 0; top: calc(50% + 0.5px - 178.5px); width: 200px; height: 357px; overflow: visible; box-shadow: -16px -16px 0 0 var(--lavender); }
+  .collage .p3 .crop { position: absolute; inset: 0; overflow: hidden; }
+  .collage .p3 img { height: 100%; left: -4.97%; top: 0; width: 266.88%; }
+  .once-footer { background: var(--purple-5); padding: 48px 16px; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+  .once-footer img { display: block; }
+  .footer-menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; font-weight: 600; font-size: 16px; line-height: 24px; font-feature-settings: "cv11" 1, "salt" 1; }
+  .footer-menu.muted { color: var(--purple-60); }
+  .footer-menus { display: flex; flex-direction: column; gap: 24px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="scroll" id="scroll">
+    <div class="header-photo"><img src="assets/header-photo.jpg" alt=""></div>
+    <div class="content">
+      <div class="headline">
+        <h1>Dein Beitrag zählt!</h1>
+        <p>Für eine starke Nachbarschaft.</p>
+      </div>
+
+      <div class="switcher" role="group" aria-label="Zahlungsintervall">
+        <button type="button" data-period="m" aria-pressed="true">Monatlich</button>
+        <button type="button" data-period="y" aria-pressed="false">Jährlich</button>
+      </div>
+
+      <div class="amount-picker">
+        <div class="prices" id="prices"></div>
+        <p class="price-description">Gib den Betrag deiner Wahl ein.</p>
+        <div class="price-field" id="priceField">
+          <button type="button" class="field" id="field" aria-label="Eigenen Betrag eingeben">
+            <span class="value placeholder" id="fieldValue">– – –</span>
+            <span class="currency">€</span>
+          </button>
+          <p class="field-error" id="fieldError" role="alert"></p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <button type="button" class="one-time" id="openOnce">Einmalig fördern? </button>
+        <div class="payment-methods">
+          <div class="pm pm-paypal"><img src="assets/paypal.svg" width="47" height="34" alt="PayPal"></div>
+          <div class="pm pm-card"><img src="assets/creditcard.svg" width="19" height="12" alt=""><span>Kreditkarte</span></div>
+          <div class="pm pm-sepa"><div class="sepa"><img src="assets/sepa-top.svg" width="43" height="12.7618" alt="SEPA"><img src="assets/sepa-bottom.svg" width="42.4066" height="6.4326" alt=""></div></div>
+        </div>
+        <p class="terms">Mit dem Klick auf „Unterstützen“ akzeptiere ich die <u>AGB</u>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-bar">
+    <div class="status-bar">
+      <span class="status-time">9:41</span>
+      <img class="status-icons" src="assets/status-icons.svg" width="66.6614" height="11.3333" alt="">
+    </div>
+    <div class="header">
+      <button type="button" aria-label="Zurück"><img src="assets/chevron-left.svg" width="24" height="24" alt=""></button>
+      <span class="header-title">Fördermitglied werden</span>
+    </div>
+  </div>
+
+  <div class="sticky">
+    <button type="button" class="btn-primary" id="submit">Unterstützen</button>
+    <div class="security"><img src="assets/lock.svg" width="16" height="16" alt=""><span>Sichere Zahlung mit Apple Pay</span></div>
+  </div>
+
+  <!-- One-time support page (mobile version of Figma "Manuelle Förderer") -->
+  <div class="screen-once" id="screenOnce" aria-hidden="true">
+    <div class="scroll" id="scrollOnce">
+      <section class="once-hero" id="onceHero">
+        <div class="once-intro" id="onceIntro">
+          <h1><span>Einmalig</span>nebenan.de fördern?</h1>
+          <p>Du möchtest nebenan.de helfen, aber lieber nicht regelmäßig? Wir freuen uns über deine Unterstützung! So kannst du uns einmalig fördern:</p>
+        </div>
+
+        <div class="once-card once-amount">
+          <div class="once-amount-top">
+            <p>Gib den Betrag deiner Wahl ein.</p>
+            <div class="once-prices" id="oncePrices"></div>
+            <div class="price-field" id="oncePriceField">
+              <button type="button" class="field" id="onceField" aria-label="Eigenen Betrag eingeben">
+                <span class="value placeholder" id="onceFieldValue">--</span>
+                <span class="currency">€</span>
+              </button>
+              <p class="field-error" id="onceFieldError" role="alert"></p>
+            </div>
+          </div>
+          <div class="once-cta">
+            <p class="terms" style="width:auto">Mit dem Klick auf „Unterstützen“ akzeptiere ich die <u>AGB</u>.</p>
+            <button type="button" class="btn-lavender" id="onceSubmit">Jetzt einmalig unterstützen</button>
+            <div class="security"><img src="assets/lock-18.svg" width="18" height="18" alt=""><span>Sichere Zahlung mit Apple Pay</span></div>
+          </div>
+        </div>
+
+        <div class="or-divider"><img src="assets/divider-line.svg" width="190" height="2" alt=""><span>Oder per PayPal</span><img src="assets/divider-line.svg" width="190" height="2" alt=""></div>
+
+        <div class="once-card paypal-row">
+          <img src="assets/paypal-logo.png" width="100" height="25.5" alt="PayPal">
+          <button type="button" class="btn-outline">Einmalig fördern</button>
+        </div>
+
+        <div class="or-divider"><img src="assets/divider-line.svg" width="190" height="2" alt=""><span>Oder ganz klassisch per Überweisung</span><img src="assets/divider-line.svg" width="190" height="2" alt=""></div>
+
+        <div class="once-card iban-card">
+          <div class="iban-row"><span class="k">Name</span><span class="v"><span>Good Hood GmbH</span></span></div>
+          <div class="iban-row"><span class="k">IBAN<button type="button" class="btn-copy" data-copy="DE35430609671177660504"><img src="assets/copy.svg" width="20" height="20" alt=""><span>Kopieren</span></button></span>
+            <span class="v"><span class="nowrap">DE35 4306 0967 1177 6605 04</span></span></div>
+          <div class="iban-row"><span class="k">BIC<button type="button" class="btn-copy" data-copy="GENODEM1GLS"><img src="assets/copy.svg" width="20" height="20" alt=""><span>Kopieren</span></button></span>
+            <span class="v"><span>GENODEM1GLS</span></span></div>
+          <div class="iban-row"><span class="k">Bank</span><span class="v"><span>GLS Gemeinschaftsbank</span></span></div>
+          <div class="iban-row"><span class="k">Vwz.</span><span class="v"><span>Vorname Nachname, PLZ<em>z.B. Laura Müller, 10997</em></span></span></div>
+          <span class="heart-badge"><img src="assets/icon-foerderer.svg" width="43.365" height="40.67" alt=""></span>
+        </div>
+      </section>
+
+      <section class="once-regular">
+        <div class="once-regular-text">
+          <h2>Doch lieber monatlich oder jährlich unterstützen?</h2>
+          <p>Mit einer regelmäßigen Förderung hilfst du nebenan.de dauerhaft. Den Betrag kannst du jederzeit in deinem Benutzerkonto anpassen.</p>
+          <button type="button" class="btn-lavender-l" id="onceToRegular">Regelmäßig fördern</button>
+        </div>
+        <div class="collage-wrap">
+          <div class="collage">
+            <div class="photo p1"><img src="assets/onetime-hero-1.jpg" alt=""></div>
+            <div class="photo p2"><img src="assets/onetime-hero-2.jpg" alt=""></div>
+            <div class="photo p3"><div class="crop"><img src="assets/onetime-hero-3.jpg" alt=""></div></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="once-footer">
+        <img src="assets/footer-icon.svg" width="56" height="56" alt="nebenan.de">
+        <div class="footer-menus">
+          <div class="footer-menu"><span>Hilfe</span><span>Presse</span><span>Gewerbe</span><span>Organisationen</span><span>Alle Bundesländer</span></div>
+          <div class="footer-menu muted"><span>Datenschutz</span><span>Datenschutzeinstellungen</span><span>Nutzungsbedingungen</span><span>Impressum</span></div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="header-bar">
+      <div class="status-bar">
+        <span class="status-time">9:41</span>
+        <img class="status-icons" src="assets/status-icons.svg" width="66.6614" height="11.3333" alt="">
+      </div>
+      <div class="header">
+        <button type="button" aria-label="Zurück" id="onceBack"><img src="assets/chevron-left.svg" width="24" height="24" alt=""></button>
+        <span class="header-title">Einmalig fördern</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="keypad" id="keypad" aria-hidden="true">
+    <button type="button" class="kb-toolbar" id="kbDone">Done</button>
+    <div class="kb-keys" id="kbKeys">
+      <button type="button" class="key-delete" data-key="del" aria-label="Löschen"><img src="assets/key-delete.svg" width="32" height="32" alt=""></button>
+      <div class="key-symbols"><img src="assets/key-symbols.svg" width="49" height="14" alt=""></div>
+    </div>
+  </div>
+
+  <!-- DRAFT: native-style iOS payment sheet (shell from Apple's iOS 27 kit, content not yet designed) -->
+  <div class="pay-overlay" id="payOverlay"></div>
+  <div class="pay-sheet" id="paySheet" role="dialog" aria-modal="true" aria-labelledby="payTitle" aria-hidden="true">
+    <span class="pay-grabber"></span>
+    <div class="pay-toolbar">
+      <button type="button" class="glass-btn" id="payClose" aria-label="Schließen">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <span class="pay-title" id="payTitle">Apple Pay</span>
+    </div>
+    <div class="pay-list">
+      <div class="pay-row"><span class="k">Karte</span><span class="v">Beispielkarte •••• 1234<small>Platzhalter</small></span></div>
+      <div class="pay-row"><span class="k">Kontakt</span><span class="v">name@beispiel.de</span></div>
+      <div class="pay-row"><span class="k" id="payKind">Abo</span><span class="v"><span id="payProduct">nebenan.de Fördermitgliedschaft</span><small id="payInterval"></small></span></div>
+    </div>
+    <div class="pay-total"><span class="k">Zahlung an Good Hood GmbH</span><span class="v" id="payAmount"></span></div>
+    <button type="button" class="pay-confirm" id="payConfirm">
+      <span class="side-btn-icon"><span>2×</span></span>
+      <span id="payHint">Zum Bezahlen Seitentaste doppelt drücken</span>
+    </button>
+  </div>
+
+  <div class="success" id="success" role="status" aria-hidden="true">
+    <img src="assets/success-plants.svg" width="165" height="102" alt="">
+    <p>Danke!<br>Mit deiner Hilfe bleibt nebenan.de langfristig für alle erhalten.</p>
+  </div>
+</div>
+
+<script>
+  const OPTIONS = {
+    m: { amounts: [5, 10, 20], popular: 1, preselected: 1, min: 1,
+         error: 'Der Mindestbetrag bei monatlicher Zahlung beträgt 1, - EUR. Bitte nur ganze Zahlen eingeben.' },
+    y: { amounts: [36, 50, 100], popular: 1, preselected: 1, min: 12,
+         error: 'Der Mindestbetrag bei jährlicher Zahlung beträgt 12, - EUR. Bitte nur ganze Zahlen eingeben.' },
+    // One-time page: amounts from Figma "Manuelle Förderer", no popular label, nothing preselected
+    once: { amounts: [4, 5, 10, 30], popular: null, preselected: null, min: 1,
+         error: 'Der Mindestbetrag beträgt 1, - EUR. Bitte nur ganze Zahlen eingeben.' },
+  };
+  const MAX_DIGITS = 4; // keeps the value inside the 104px Price Field
+
+  const $ = (id) => document.getElementById(id);
+  const keypad = $('keypad');
+
+  // Each screen has its own amount form. mode: 'idle' | 'typing' | 'error' | 'custom'
+  const forms = {
+    main: {
+      period: 'm', selected: OPTIONS.m.preselected, input: '', mode: 'idle', placeholder: '– – –',
+      el: { prices: $('prices'), field: $('field'), priceField: $('priceField'), value: $('fieldValue'), error: $('fieldError'), scroll: $('scroll'), bottomBar: 112 },
+    },
+    once: {
+      period: 'once', selected: null, input: '', mode: 'idle', placeholder: '--',
+      el: { prices: $('oncePrices'), field: $('onceField'), priceField: $('oncePriceField'), value: $('onceFieldValue'), error: $('onceFieldError'), scroll: $('scrollOnce'), bottomBar: 0 },
+    },
+  };
+  let screen = 'main';
+  const form = () => forms[screen];
+
+  // Build the numeric keypad from the Figma "Keyboards / Numeric (iPhone)" layout
+  const KEYS = [
+    ['1', '', 6, 6], ['2', 'ABC', 129, 6], ['3', 'DEF', 252, 6],
+    ['4', 'GHI', 6, 59], ['5', 'JKL', 129, 59], ['6', 'MNO', 252, 59],
+    ['7', 'PQRS', 6, 113], ['8', 'TUV', 129, 113], ['9', 'WXYZ', 252, 113],
+    ['0', '', 129, 167],
+  ];
+  for (const [num, letters, left, top] of KEYS) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'key' + (num === '0' ? ' zero' : ''); b.dataset.key = num;
+    b.style.left = left + 'px'; b.style.top = top + 'px';
+    if (top === 59 || top === 113) b.style.height = '47px';
+    b.innerHTML = `<span class="num">${num}</span>` + (letters ? `<span class="letters">${letters}</span>` : '');
+    $('kbKeys').appendChild(b);
+  }
+
+  function renderForm(f) {
+    const opt = OPTIONS[f.period], el = f.el;
+
+    el.prices.innerHTML = opt.amounts.map((a, i) =>
+      `<button type="button" class="tile" data-index="${i}" aria-pressed="${f.selected === i}">${a} €</button>`).join('') +
+      (opt.popular !== null ? `<span class="label">beliebt</span>` : '');
+    if (opt.popular !== null) {
+      // "beliebt" sits centred under the popular tile, 38px from the top of the row (as in Figma)
+      const popularTile = el.prices.children[opt.popular], label = el.prices.querySelector('.label');
+      label.style.top = '38px';
+      label.style.left = (popularTile.offsetLeft + (popularTile.offsetWidth - label.offsetWidth) / 2) + 'px';
+    }
+
+    const value = f.selected !== null ? String(opt.amounts[f.selected]) : f.input;
+    el.value.textContent = value || f.placeholder;
+    el.value.classList.toggle('placeholder', !value);
+    el.priceField.classList.toggle('focus', f.mode === 'typing' && !value);
+    el.priceField.classList.toggle('error', f.mode === 'error');
+    el.error.textContent = f.mode === 'error' ? opt.error : '';
+  }
+
+  function render() {
+    const main = forms.main;
+    document.querySelectorAll('.switcher button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.period === main.period)));
+    forms.main.el.prices.className = 'prices' + (main.period === 'y' ? ' yearly' : '');
+    renderForm(forms.main);
+    renderForm(forms.once);
+
+    const open = form().mode === 'typing';
+    keypad.classList.toggle('open', open);
+    keypad.setAttribute('aria-hidden', String(!open));
+  }
+
+  function resetForm(f, period) {
+    Object.assign(f, { period, selected: OPTIONS[period].preselected, input: '', mode: 'idle' });
+  }
+
+  function setPeriod(p) {
+    if (p === forms.main.period) return;
+    resetForm(forms.main, p);
+    render();
+  }
+
+  function selectTile(f, i) {
+    Object.assign(f, { selected: f.selected === i ? null : i, input: '', mode: 'idle' });
+    render();
+  }
+
+  function openKeypad() {
+    const f = form();
+    if (f.mode === 'typing') return;
+    // From a picked tile or the empty field start fresh; from error/custom keep the typed amount
+    if (f.mode === 'idle') f.input = '';
+    Object.assign(f, { selected: null, mode: 'typing' });
+    render();
+    // Keep the field visible above the keypad without scrolling the device frame itself
+    const scroll = f.el.scroll;
+    const fieldBottom = f.el.priceField.getBoundingClientRect().bottom - scroll.getBoundingClientRect().top + scroll.scrollTop;
+    const visible = scroll.clientHeight - keypad.offsetHeight + f.el.bottomBar - 16;
+    if (fieldBottom - scroll.scrollTop > visible) scroll.scrollTo({ top: fieldBottom - visible, behavior: 'smooth' });
+  }
+
+  function pressKey(k) {
+    const f = form();
+    if (k === 'del') f.input = f.input.slice(0, -1);
+    else if (f.input.length < MAX_DIGITS) f.input += k;
+    render();
+  }
+
+  function done() {
+    const f = form();
+    if (!f.input) f.mode = 'idle';
+    else f.mode = Number(f.input) < OPTIONS[f.period].min ? 'error' : 'custom';
+    render();
+  }
+
+  // Navigation between the main screen and the one-time page
+  function setScreen(name) {
+    if (form().mode === 'typing') done();
+    screen = name;
+    const once = $('screenOnce');
+    once.classList.toggle('open', name === 'once');
+    once.setAttribute('aria-hidden', String(name !== 'once'));
+    if (name === 'once') { resetForm(forms.once, 'once'); forms.once.el.scroll.scrollTop = 0; }
+    render();
+  }
+
+  // Green hero band: from the top of the page to the middle of the amount card (as in Figma)
+  function sizeGreenBand() {
+    const hero = $('onceHero'), card = hero.querySelector('.once-amount');
+    hero.style.setProperty('--green-height', (card.offsetTop + 120) + 'px');
+  }
+
+  // Copy IBAN / BIC
+  document.querySelectorAll('.btn-copy').forEach((b) => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); } catch (e) { /* clipboard may be blocked; feedback still shown */ }
+    const label = b.querySelector('span');
+    label.textContent = 'Kopiert';
+    setTimeout(() => { label.textContent = 'Kopieren'; }, 1500);
+  }));
+
+  // DRAFT payment sheet
+  const paySheet = $('paySheet'), payOverlay = $('payOverlay');
+  let payTimer = null;
+  const AUTO_CONFIRM_DELAY = 2000;
+
+  function currentAmount(f) {
+    const opt = OPTIONS[f.period];
+    if (f.selected !== null) return opt.amounts[f.selected];
+    if (f.mode === 'custom') return Number(f.input);
+    return null;
+  }
+
+  function submit() {
+    const f = form();
+    if (f.mode === 'typing') done();
+    if (f.mode === 'error') return;
+    const amount = currentAmount(f);
+    if (amount === null) { openKeypad(); return; }
+    const once = f.period === 'once';
+    $('payAmount').textContent = amount.toLocaleString('de-DE', { minimumFractionDigits: 2 }) + ' €';
+    $('payKind').textContent = once ? 'Förderung' : 'Abo';
+    $('payProduct').textContent = once ? 'nebenan.de Förderung' : 'nebenan.de Fördermitgliedschaft';
+    $('payInterval').textContent = once ? 'Einmalig' : f.period === 'm' ? 'Monatlich' : 'Jährlich';
+    $('payHint').textContent = 'Zum Bezahlen Seitentaste doppelt drücken';
+    paySheet.classList.remove('paying', 'done');
+    setPaySheet(true);
+    // Without a tap on the confirm area, the payment completes on its own after a short delay
+    payTimer = setTimeout(confirmPayment, AUTO_CONFIRM_DELAY);
+  }
+
+  function setPaySheet(open) {
+    clearTimeout(payTimer);
+    paySheet.classList.toggle('open', open);
+    payOverlay.classList.toggle('open', open);
+    paySheet.setAttribute('aria-hidden', String(!open));
+  }
+
+  function confirmPayment() {
+    if (paySheet.classList.contains('paying') || paySheet.classList.contains('done')) return;
+    paySheet.classList.add('paying');
+    $('payHint').textContent = 'Wird bearbeitet …';
+    payTimer = setTimeout(() => {
+      paySheet.classList.replace('paying', 'done');
+      $('payHint').textContent = 'Fertig';
+      payTimer = setTimeout(() => { setPaySheet(false); showSuccess(); }, 1200);
+    }, 1200);
+  }
+
+  // After payment: show the thank-you screen, then return to the starting screen
+  const SUCCESS_DURATION = 4000;
+  function showSuccess() {
+    const success = $('success');
+    success.classList.add('open');
+    success.setAttribute('aria-hidden', 'false');
+    setTimeout(() => {
+      resetForm(forms.main, 'm');
+      resetForm(forms.once, 'once');
+      setScreen('main');
+      forms.main.el.scroll.scrollTop = 0;
+      success.classList.remove('open');
+      success.setAttribute('aria-hidden', 'true');
+    }, SUCCESS_DURATION);
+  }
+
+  $('submit').addEventListener('click', submit);
+  $('onceSubmit').addEventListener('click', submit);
+  $('payClose').addEventListener('click', () => setPaySheet(false));
+  payOverlay.addEventListener('click', () => setPaySheet(false));
+  $('payConfirm').addEventListener('click', confirmPayment);
+
+  $('openOnce').addEventListener('click', () => setScreen('once'));
+  $('onceBack').addEventListener('click', () => setScreen('main'));
+  $('onceToRegular').addEventListener('click', () => setScreen('main'));
+
+  document.querySelector('.switcher').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setPeriod(b.dataset.period); });
+  for (const f of Object.values(forms)) {
+    f.el.prices.addEventListener('click', (e) => { const b = e.target.closest('.tile'); if (b) selectTile(f, Number(b.dataset.index)); });
+    f.el.field.addEventListener('click', openKeypad);
+  }
+  $('kbKeys').addEventListener('click', (e) => { const b = e.target.closest('[data-key]'); if (b) pressKey(b.dataset.key); });
+  $('kbDone').addEventListener('click', done);
+
+  // Desktop convenience: type digits on a real keyboard while the keypad is open
+  document.addEventListener('keydown', (e) => {
+    if (form().mode !== 'typing') return;
+    if (/^[0-9]$/.test(e.key)) pressKey(e.key);
+    else if (e.key === 'Backspace') pressKey('del');
+    else if (e.key === 'Enter') done();
+  });
+
+  render();
+  sizeGreenBand();
+  document.fonts.ready.then(sizeGreenBand);
+</script>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var isEmbed = window.self !== window.top;
+    var params = new URLSearchParams(window.location.search);
+    var isFs = params.get("fs") === "1";
+
+    if (isEmbed) root.classList.add("is-embed");
+    if (isFs) root.classList.add("is-fs");
+
+    function syncFsScroll() {
+      if (!root.classList.contains("is-fs")) return;
+      var scroll = document.querySelector(".scroll");
+      if (!scroll) return;
+      // Hide scrollbar when content fits; keep auto for screens that truly overflow
+      scroll.style.overflowY =
+        scroll.scrollHeight > scroll.clientHeight + 24 ? "auto" : "hidden";
+    }
+
+    function fitFsPhone() {
+      if (!root.classList.contains("is-fs")) return;
+      var phone = document.querySelector(".phone");
+      if (!phone) return;
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var scale = Math.min(vw / 375, vh / 812);
+      phone.style.transform = "scale(" + scale + ")";
+      // Keep layout box from overflowing the iframe (avoid outer scroll)
+      phone.style.marginBottom = 812 * scale - 812 + "px";
+      syncFsScroll();
+    }
+
+    if (isFs) {
+      fitFsPhone();
+      window.addEventListener("resize", fitFsPhone);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(fitFsPhone);
+      }
+      // Re-check after layout paints / mode changes inside the prototype
+      window.addEventListener("load", syncFsScroll);
+      var mo = new MutationObserver(syncFsScroll);
+      mo.observe(document.body, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ["class", "hidden", "aria-hidden"],
+      });
+    }
+  })();
+</script>
+</body>
+</html>
