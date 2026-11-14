@@ -224,7 +224,7 @@ body {
   background-color: #fff;
   min-height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
@@ -1068,7 +1068,7 @@ textarea.w-input, textarea.w-select {
 .w-widget-twitter-count-shim .w-widget-twitter-count-inner {
   text-align: center;
   color: #999;
-  font-family: serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 15px;
   line-height: 12px;
   position: relative;
@@ -1447,7 +1447,7 @@ textarea.w-input, textarea.w-select {
   -webkit-tap-highlight-color: transparent;
   background: #000000e6;
   outline: 0;
-  font-family: Helvetica Neue, Helvetica, Ubuntu, Segoe UI, Verdana, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 17px;
   font-style: normal;
   font-weight: 300;
@@ -2066,38 +2066,6 @@ textarea.w-input, textarea.w-select {
   display: grid;
 }
 
-@font-face {
-  font-family: Eina;
-  src: url("https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/6807ccc4019dbd22e881b180_eina%20bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Eina;
-  src: url("https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/6807ccc4019dbd22e881b17f_eina%20regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Markpro;
-  src: url("https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/6807ccc4019dbd22e881b185_markpro-bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Markpro;
-  src: url("https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/6807ccc4019dbd22e881b182_markpro-heavy%20(1).woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --bright: #cac7eb;
   --text-color: #545465;
@@ -2143,7 +2111,7 @@ textarea.w-input, textarea.w-select {
 
 body {
   color: #333;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
@@ -2151,7 +2119,7 @@ body {
 h1 {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 144px;
   font-weight: 900;
   line-height: 137px;
@@ -2162,7 +2130,7 @@ h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 5em;
   font-weight: 900;
   line-height: 1em;
@@ -2173,7 +2141,7 @@ h3 {
   letter-spacing: -.5px;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 2.6em;
   font-weight: 900;
   line-height: 1.5em;
@@ -2183,7 +2151,7 @@ h4 {
   color: var(--bright);
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 27px;
   font-weight: 700;
   line-height: 41px;
@@ -2195,7 +2163,7 @@ h5 {
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 0;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -2205,7 +2173,7 @@ h6 {
   color: var(--bright);
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 32px;
@@ -2214,7 +2182,7 @@ h6 {
 p {
   color: var(--text-color);
   margin-bottom: 0;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -2284,7 +2252,7 @@ a {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 16px;
@@ -2311,7 +2279,7 @@ a {
   text-align: center;
   border-radius: 4px;
   padding: 12px 25px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -2392,7 +2360,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -2436,7 +2404,7 @@ a {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
@@ -2483,7 +2451,7 @@ a {
 .nav__link-div.nav__link-div--black.nav__link-div--space.w--current {
   color: #5037cd;
   flex: 0 auto;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 500;
   text-decoration: none;
   display: flex;
@@ -2637,7 +2605,7 @@ a {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -2682,7 +2650,7 @@ a {
   height: 46px;
   margin-bottom: 0;
   padding: 14px 18px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
@@ -2709,7 +2677,7 @@ a {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding: 15px 48px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -2722,7 +2690,7 @@ a {
 
 .hero__cta-disclaimer {
   color: #54546599;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 24px;
@@ -2775,7 +2743,7 @@ a {
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 20px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 18px;
@@ -2885,7 +2853,7 @@ a {
   opacity: 0;
   text-align: center;
   margin-bottom: 46px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 500;
   transform: translate(0, 100px);
 }
@@ -3243,7 +3211,7 @@ a {
 .news__card-buttontext {
   color: var(--blue);
   margin-right: 8px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 36px;
@@ -3311,7 +3279,7 @@ a {
   color: var(--text-color);
   letter-spacing: .1px;
   margin-bottom: 34px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -3332,7 +3300,7 @@ a {
 
 .testimonials__card-role {
   color: #2b2a3580;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -3385,7 +3353,7 @@ a {
   height: 46px;
   margin-bottom: 0;
   padding: 14px 18px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
@@ -3399,7 +3367,7 @@ a {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding: 15px 48px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -3412,7 +3380,7 @@ a {
 
 .cta__disclaimer {
   color: #fff9;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 24px;
@@ -3471,7 +3439,7 @@ a {
 
 .footer__copyright {
   color: var(--bright);
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
@@ -3495,7 +3463,7 @@ a {
 .footer__link {
   color: var(--bright);
   margin-bottom: 4px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
@@ -3603,7 +3571,7 @@ a {
   text-align: center;
   letter-spacing: -3px;
   margin-bottom: -.2em;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 7em;
   font-weight: 900;
   line-height: .9em;
@@ -3631,7 +3599,7 @@ a {
 }
 
 .about-intro__paragraph {
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 38px;
@@ -3657,7 +3625,7 @@ a {
 .about__heading {
   color: var(--bright);
   text-align: center;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 4.9em;
   font-weight: 900;
   line-height: 1em;
@@ -3677,7 +3645,7 @@ a {
 }
 
 .about__paragraph1 {
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 38px;
@@ -3727,7 +3695,7 @@ a {
 }
 
 .about__paragraph2 {
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 38px;
@@ -3799,7 +3767,7 @@ a {
 .about__investors-name {
   color: var(--bright);
   text-align: center;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -3808,7 +3776,7 @@ a {
 .about__investors-info {
   color: #2b2a3580;
   text-align: center;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -3847,7 +3815,7 @@ a {
 
 .about-numbers__metric {
   text-align: center;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 36px;
@@ -3869,7 +3837,7 @@ a {
 .about-numbers__metrich {
   color: #2b2a3580;
   text-align: center;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -3906,7 +3874,7 @@ a {
 .about-numbers__rating-link {
   color: var(--bright);
   text-align: center;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -3962,7 +3930,7 @@ a {
 
 .about-jobs__benefit {
   color: var(--text-color);
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -4013,7 +3981,7 @@ a {
 .about-jobs__position-title {
   color: var(--bright);
   text-align: left;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -4022,7 +3990,7 @@ a {
 .about-jobs__position-location {
   color: #2b2a3580;
   text-align: right;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -4076,7 +4044,7 @@ a {
 .blog-hero__cta-text {
   color: var(--blue);
   margin-right: 8px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 36px;
@@ -4169,7 +4137,7 @@ a {
 .newsletter-cta__paragraph {
   color: #fff9;
   margin-bottom: 11px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -4211,7 +4179,7 @@ a {
   height: 46px;
   margin-bottom: 0;
   padding: 14px 18px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
@@ -4225,7 +4193,7 @@ a {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding: 15px 48px;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -4238,7 +4206,7 @@ a {
 
 .newsletter-cta__disclaimer {
   color: #fff9;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 24px;
@@ -4305,7 +4273,7 @@ a {
 .blog-essential__article-nr {
   color: var(--darker-grey);
   margin-bottom: 20px;
-  font-family: Markpro, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 64px;
   font-weight: 900;
   line-height: 60px;
@@ -4634,7 +4602,7 @@ a {
   margin-top: 23vw;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.75em;
@@ -4659,7 +4627,7 @@ a {
   text-align: center;
   object-fit: fill;
   margin-top: 55px;
-  font-family: PT Sans, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 10vw;
   line-height: .95em;
   display: block;
@@ -4672,7 +4640,7 @@ a {
   max-width: none;
   height: auto;
   margin-left: -5em;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 600;
   position: absolute;
   top: -1.05em;
@@ -4734,7 +4702,7 @@ a {
 
 .about__role-teammember {
   color: var(--white);
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -4769,7 +4737,7 @@ a {
   margin-right: auto;
   padding-left: 0;
   padding-right: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 2.4em;
   font-weight: 600;
   line-height: 1.3em;
@@ -4799,7 +4767,7 @@ a {
   flex-flow: column;
   margin: 15px auto 0;
   padding-bottom: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -4818,7 +4786,7 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   margin: 20px auto 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -5102,7 +5070,7 @@ a {
   color: #391b50;
   text-align: center;
   margin-top: 60px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 10vw;
   font-weight: 600;
   line-height: 1.1em;
@@ -5120,7 +5088,7 @@ a {
   margin-top: -4vw;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.75em;
@@ -5170,7 +5138,7 @@ a {
 }
 
 .heading {
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 4.5em;
   font-weight: 600;
   line-height: 1.2em;
@@ -5181,7 +5149,7 @@ a {
 }
 
 .paragraph-2 {
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 400;
 }
 
@@ -5215,7 +5183,7 @@ a {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 3em;
   font-weight: 700;
 }
@@ -5225,7 +5193,7 @@ a {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 300;
   line-height: 20px;
 }
@@ -5436,18 +5404,18 @@ a {
   background-color: #7873f5;
   border-radius: 4px;
   width: 120px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .field-label, .field-label-2, .field-label-3 {
   color: #cac7eb;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 400;
 }
 
 .text-field {
   border-radius: 4px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .text-field.text-field-2 {
@@ -5461,12 +5429,12 @@ a {
   background-color: #fff0;
   border: .5px solid #cac7eb;
   border-radius: 1px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .textarea {
   border-radius: 4px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .image-7 {
@@ -5494,7 +5462,7 @@ a {
   margin-bottom: 10px;
   margin-right: 0;
   padding-right: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 25px;
@@ -5507,7 +5475,7 @@ a {
   text-transform: uppercase;
   object-fit: fill;
   margin-bottom: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 3em;
   font-weight: 400;
 }
@@ -5535,12 +5503,12 @@ a {
 .subpage-subtitle {
   text-align: left;
   align-self: flex-start;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 24px;
 }
 
 .paragraph-5 {
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 300;
 }
 
@@ -5563,7 +5531,7 @@ a {
   color: #000;
   text-align: center;
   margin-top: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 300;
 }
 
@@ -5585,7 +5553,7 @@ a {
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   display: block;
   overflow: visible;
 }
@@ -5657,7 +5625,7 @@ a {
 
 .subpage-hero-bg {
   background-color: #835959;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .gallery-grid {
@@ -5704,7 +5672,7 @@ a {
 .heading-4 {
   text-align: center;
   margin-bottom: 10px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 3.9em;
   font-weight: 600;
 }
@@ -5713,7 +5681,7 @@ a {
   color: #b0aed3;
   text-align: left;
   margin-bottom: 10px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 3.6em;
   font-weight: 600;
   line-height: 1.2em;
@@ -5760,7 +5728,7 @@ a {
 .about-jobs__benefit-2 {
   color: #545465;
   direction: ltr;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -5920,7 +5888,7 @@ a {
   margin-bottom: 20px;
   padding-top: 20px;
   padding-right: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
@@ -5971,7 +5939,7 @@ a {
 .subpage-headline-center {
   color: #000;
   text-align: center;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 2.5em;
   font-weight: 400;
 }
@@ -5987,7 +5955,7 @@ a {
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 600;
 }
@@ -6056,7 +6024,7 @@ a {
   margin-top: 30vw;
   padding-top: 10em;
   padding-bottom: 10em;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 19px;
 }
 
@@ -6084,7 +6052,7 @@ a {
 .paragraph-center {
   color: #cac7eb;
   text-align: center;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 300;
 }
 
@@ -6163,7 +6131,7 @@ a {
 
 .about-jobs__benefit-3 {
   color: #545465;
-  font-family: Eina, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 36px;
@@ -7315,7 +7283,7 @@ a {
   color: #8638b6;
   text-align: center;
   text-transform: uppercase;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 28px;
   font-weight: 300;
 }
@@ -7364,7 +7332,7 @@ a {
   max-width: 1000px;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 50px;
   font-weight: 900;
   line-height: 60px;
@@ -7379,7 +7347,7 @@ a {
   margin-top: 0;
   margin-bottom: 10px;
   padding-bottom: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -7445,7 +7413,7 @@ a {
   margin-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
 }
 
 .button-3.home-button {
@@ -7640,7 +7608,7 @@ a {
 .paragraph-10 {
   color: #753fff;
   margin-top: 20px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
@@ -7817,7 +7785,7 @@ a {
 .heading-hero.light-mode {
   color: #cac7eb;
   text-align: center;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 34px;
   font-weight: 500;
 }
@@ -7850,14 +7818,14 @@ a {
 }
 
 .paragraph-11 {
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 15px;
 }
 
 .subtext {
   color: #000;
   text-align: left;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 16px;
 }
 
@@ -8103,7 +8071,7 @@ a {
 .highlight-subtitle {
   color: #b0aed3;
   text-transform: none;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 1.1em;
   font-weight: 400;
   line-height: 1.3em;
@@ -8509,7 +8477,7 @@ a {
   text-align: left;
   text-transform: none;
   margin-bottom: 20px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 3.1em;
   font-weight: 500;
 }
@@ -8544,7 +8512,7 @@ a {
   text-transform: none;
   margin-top: 0;
   margin-bottom: 30px;
-  font-family: Open Sans, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 22px;
   font-weight: 300;
   line-height: 1;
@@ -8554,7 +8522,7 @@ a {
   color: #b2aedf;
   margin-bottom: 0;
   padding-top: 15px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 1.8em;
   font-weight: 300;
   overflow: visible;
@@ -8717,7 +8685,7 @@ a {
   color: #fff;
   text-transform: uppercase;
   margin-top: 0;
-  font-family: Open Sans, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 60px;
   line-height: 1;
 }
@@ -8732,7 +8700,7 @@ a {
   border: 3px solid #000;
   border-radius: 50px;
   padding: 20px 30px 20px 70px;
-  font-family: Montserrat, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 24px;
   font-weight: 600;
 }
@@ -8750,7 +8718,7 @@ a {
   color: #cac7eb;
   width: 100%;
   margin-bottom: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
@@ -8791,7 +8759,7 @@ a {
   letter-spacing: 6px;
   -webkit-text-stroke-color: #fff;
   text-transform: uppercase;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 22px;
   font-weight: 300;
 }
@@ -8993,7 +8961,7 @@ a {
 
 .text-size-large {
   text-transform: uppercase;
-  font-family: Oswald, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 1.5rem;
   line-height: 1.2;
 }
@@ -9320,7 +9288,7 @@ a {
 }
 
 .heading-style-h5-2 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   line-height: 1.4;
@@ -9370,7 +9338,7 @@ a {
 }
 
 .heading-style-h6 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1.4;
@@ -9635,7 +9603,7 @@ a {
   color: #cac7eb;
   height: auto;
   margin-bottom: 30px;
-  font-family: Poppins, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 3.1em;
 }
 
@@ -10698,7 +10666,7 @@ a {
 
 .h2 {
   text-align: center;
-  font-family: Lato, sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-size: 70px;
   font-weight: 700;
   line-height: 20px;
@@ -14801,7 +14769,7 @@ a {
 
   .section-title {
     margin-top: 20px;
-    font-family: Poppins, sans-serif;
+    font-family: "Gothic A1", sans-serif;
     font-size: 28px;
     font-weight: 600;
     line-height: 38px;
@@ -15262,7 +15230,7 @@ a {
 
   .icon_chevron_down {
     color: #fff;
-    font-family: Lato, sans-serif;
+    font-family: "Gothic A1", sans-serif;
     font-size: 30px;
     font-weight: 100;
     line-height: 10px;
