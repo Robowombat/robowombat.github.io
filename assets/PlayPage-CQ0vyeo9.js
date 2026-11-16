@@ -1,4 +1,4 @@
-import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{a as t,d as n,i as r,l as i,o as a,s as o,t as s,u as c}from"./index-C_bcCjEV.js";var l=e(n(),1),u=`<div data-collapse="medium" data-animation="default" data-duration="400" id="Projects-Branding" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav"><div class="nav__container w-container"><a href="/" class="w-nav-brand" aria-label="home"><img loading="eager" fetchpriority="high" src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/680a6a827ea03a8ecb52d35e_PF_signature_bright.png" alt="" class="image-8"></a><nav role="navigation" class="nav-menu w-nav-menu"><a href="/#Work" class="nav__link-div nav__link-div--black nav__link-div--space w-inline-block"><div class="nav__link">Work</div></a><a href="/play" aria-current="page" class="nav__link-div nav__link-div--black nav__link-div--space w-inline-block w--current"><div class="nav__link">Play</div></a><a href="#Contact" class="nav__link-div nav__link-div--black nav__link-div--space w-inline-block"><div class="nav__link">Contact</div></a></nav><div class="nav__mobilebutton w-nav-button" aria-label="menu" role="button" tabindex="0"><div class="nav__mobileicon w-icon-nav-menu"></div></div></div><div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
+import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{a as t,d as n,i as r,l as i,o as a,s as o,t as s,u as c}from"./index-M2LiJ-cd.js";var l=e(n(),1),u=`<div data-collapse="medium" data-animation="default" data-duration="400" id="Projects-Branding" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav"><div class="nav__container w-container"><a href="/" class="w-nav-brand" aria-label="home"><img loading="eager" fetchpriority="high" src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/680a6a827ea03a8ecb52d35e_PF_signature_bright.png" alt="" class="image-8"></a><nav role="navigation" class="nav-menu w-nav-menu"><a href="/#Work" class="nav__link-div nav__link-div--black nav__link-div--space w-inline-block"><div class="nav__link">Work</div></a><a href="/play" aria-current="page" class="nav__link-div nav__link-div--black nav__link-div--space w-inline-block w--current"><div class="nav__link">Play</div></a><a href="#Contact" class="nav__link-div nav__link-div--black nav__link-div--space w-inline-block"><div class="nav__link">Contact</div></a></nav><div class="nav__mobilebutton w-nav-button" aria-label="menu" role="button" tabindex="0"><div class="nav__mobileicon w-icon-nav-menu"></div></div></div><div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
 <section class="play-page" id="Play">
   <section class="play-ai" aria-labelledby="play-ai-heading">
     <header class="play-ai__header">
@@ -103,52 +103,49 @@ import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{a as t,d as n,i as r,l
     <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="5" aria-label="Open artwork 6">
           <img src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/68cb14a06034542f191432e3_Screenshot%202024-12-26%20at%2000.50.05.png" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="6" aria-label="Open artwork 7">
-          <video src="/assets/play/handmade/lushymind-filter.mp4" poster="/assets/play/handmade/lushymind-filter.jpg" muted loop playsinline autoplay preload="metadata"></video>
-        </button>
-    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="7" aria-label="Open artwork 8">
+    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="6" aria-label="Open artwork 7">
           <img src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/68cb159d16eb73cf3f3cc233_Dragon2.png" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--wide" data-index="8" aria-label="Open artwork 9">
+    <button type="button" class="play-gallery__item play-gallery__item--wide" data-index="7" aria-label="Open artwork 8">
           <img src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/68cb15c93b6eef17ccc04b82_KaliGoddess_Present.png" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="9" aria-label="Open artwork 10">
+    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="8" aria-label="Open artwork 9">
           <img src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/68cb14474624d387a2f06cab_Anger-God.png" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="10" aria-label="Open artwork 11">
+    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="9" aria-label="Open artwork 10">
           <img src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/68cb17a68d6cde5f9169be0a_Orientland.png" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="11" aria-label="Open artwork 12">
+    <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="10" aria-label="Open artwork 11">
           <img src="https://cdn.prod.website-files.com/6807ccc4019dbd22e881b10c/68cb18039522733829b7c952_Psy_Yoni.jpeg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="12" aria-label="Open artwork 13">
+    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="11" aria-label="Open artwork 12">
           <img src="/assets/play/handmade/polip-print-a4.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--wide" data-index="13" aria-label="Open artwork 14">
+    <button type="button" class="play-gallery__item play-gallery__item--wide" data-index="12" aria-label="Open artwork 13">
           <img src="/assets/play/handmade/swing-web-featured.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="14" aria-label="Open artwork 15">
+    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="13" aria-label="Open artwork 14">
           <img src="/assets/play/handmade/nora-abstract-2.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="15" aria-label="Open artwork 16">
+    <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="14" aria-label="Open artwork 15">
           <img src="/assets/play/handmade/freehandgraphics-featured.png" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="16" aria-label="Open artwork 17">
+    <button type="button" class="play-gallery__item play-gallery__item--sm" data-index="15" aria-label="Open artwork 16">
           <img src="/assets/play/handmade/calendar-2014-07.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="17" aria-label="Open artwork 18">
+    <button type="button" class="play-gallery__item play-gallery__item--lg" data-index="16" aria-label="Open artwork 17">
           <img src="/assets/play/handmade/july-13x18.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--wide" data-index="18" aria-label="Open artwork 19">
+    <button type="button" class="play-gallery__item play-gallery__item--wide" data-index="17" aria-label="Open artwork 18">
           <img src="/assets/play/handmade/habkarton-a4-woman.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="19" aria-label="Open artwork 20">
+    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="18" aria-label="Open artwork 19">
           <img src="/assets/play/handmade/calendar-2014-04.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="20" aria-label="Open artwork 21">
+    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="19" aria-label="Open artwork 20">
           <img src="/assets/play/handmade/postcard-a6-monster.jpg" alt="" loading="lazy" decoding="async" />
         </button>
-    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="21" aria-label="Open artwork 22">
+    <button type="button" class="play-gallery__item play-gallery__item--tall" data-index="20" aria-label="Open artwork 21">
           <img src="/assets/play/handmade/sticker-skull.jpg" alt="" loading="lazy" decoding="async" />
         </button>
   </div>
